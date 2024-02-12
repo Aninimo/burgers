@@ -14,8 +14,9 @@ export function Navbar() {
     setCartMenuVisible(!cartMenuVisible);
   };
 
-  const cartItems = useSelector((state) => state.cartItems);
-  const total = useSelector((state) => state.total);
+  const cartItems = useSelector((state: { cartItems: any }) => state.cartItems);
+  
+  const total = useSelector((state: { total: number }) => state.total);
 
   useEffect(() => {
     dispatch(calculateTotal());
